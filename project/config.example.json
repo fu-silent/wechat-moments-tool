@@ -1,0 +1,45 @@
+{
+  "_readme": "模板：复制为 config.json 后填写自己的信息。config.json 含微信主口令，权限建议 chmod 600，切勿分享/提交。带 REPLACE_ME 的字段必须改。",
+  "schema_version": 1,
+  "wechat": {
+    "_readme": "self_wxid=你的微信 wxid；master_key_hex=微信 4.x 数据库的 32 字节主口令（64 位十六进制，不是登录密码）；container_dir=微信 xwechat_files 目录；若自动探测失败，直接把 sns_dir 设为包含 sns.db 的目录（跨平台/自定义安装时用）；contact_db_encrypted=contact.db 的加密副本路径（可留空，之后用 decrypt_db.py 手动解密）。",
+    "self_wxid": "wxid_REPLACE_ME",
+    "self_name": "REPLACE_ME",
+    "master_key_hex": "REPLACE_ME_64_HEX_CHARS",
+    "container_dir": "~/Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files",
+    "sns_dir": "",
+    "contact_db_encrypted": ""
+  },
+  "paths": {
+    "_readme": "相对路径按工作区根目录解析；一般不用改。原始加密快照放 raw_dir，解密结果放 decrypted_dir。",
+    "raw_dir": "project/data/raw",
+    "decrypted_dir": "project/data/decrypted",
+    "snapshots_dir": "project/data/snapshots",
+    "state_dir": "project/data/state",
+    "logs_dir": "project/logs"
+  },
+  "export": {
+    "workers": 8,
+    "legacy_snapshot_label": "legacy_snapshot"
+  },
+  "self_export": {
+    "_readme": "自己朋友圈的导出设置。expected 可填自己的历史统计做严格校验；留 null 则只做自洽校验（推荐第一次留 null）。",
+    "outdir": "deliverables",
+    "slug": "moments_all",
+    "title": "我的朋友圈全量导出",
+    "xlsx": "微信朋友圈全量导出.xlsx",
+    "expected": null
+  },
+  "targets": {
+    "_readme": "要导出朋友圈的好友列表；键名随意（用于 sync_friends.py --targets 参数）。since 可省略/留空；填写后只导入该日期起的帖子。",
+    "friend1": {
+      "name": "好友备注名",
+      "wxid": "wxid_REPLACE_ME",
+      "outdir": "deliverables_friend1",
+      "slug": "moments_friend1",
+      "title": "好友1的朋友圈导出",
+      "xlsx": "微信朋友圈_好友1.xlsx",
+      "since": ""
+    }
+  }
+}

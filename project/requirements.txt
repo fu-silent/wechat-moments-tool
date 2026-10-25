@@ -1,0 +1,3 @@
+# Runtime dependencies (macOS / Python 3.13 已验证)
+pycryptodome>=3.20
+openpyxl>=3.1
